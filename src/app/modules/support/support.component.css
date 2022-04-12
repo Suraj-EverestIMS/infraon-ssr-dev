@@ -1,6 +1,0 @@
-.header-section {
-    background-image: url(./../../../assets/img/header-bg/support-bg-right.svg), url(./../../../assets/img/header-bg/product-header-bg-right.svg);
-    background-size: inherit,contain;
-    background-repeat: no-repeat,no-repeat;
-    background-position: right bottom, left center;
-}
