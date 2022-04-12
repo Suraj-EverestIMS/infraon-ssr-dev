@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkinfraon_app=self.webpackChunkinfraon_app||[]).push([[831],{3831:(s,o,_)=>{_.r(o),_.d(o,{InfraonNccmModule:()=>u});var r=_(9808),c=_(3508),l=_(4999),E=_(9529),d=_(7850),a=_(4893);let u=(()=>{class n{}return n.\u0275fac=function(m){return new(m||n)},n.\u0275mod=a.oAB({type:n}),n.\u0275inj=a.cJS({imports:[[r.ez,c.y,l.q,E.bB,d.f]]}),n})()}}]);
