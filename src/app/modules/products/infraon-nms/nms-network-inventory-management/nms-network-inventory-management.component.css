@@ -1,7 +1,0 @@
-.header-section {
-    background-image: url(./../../../../../assets/img/header-bg/nms-feature5-header-left.svg), url(./../../../../../assets/img/header-bg/nms-feature5-header-right-01.svg);
-    background-size: contain,contain;
-    background-repeat: no-repeat,no-repeat;
-    background-position: left center, right center;
-    background-color: #0d51d9;
-}
