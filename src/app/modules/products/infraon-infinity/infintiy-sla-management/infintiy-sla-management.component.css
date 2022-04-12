@@ -1,0 +1,6 @@
+.header-section {
+    background-image: url(./../../../../../assets/img/header-bg/infinity-feature-4-bg-left-01.svg), url(./../../../../../assets/img/header-bg/infinity-feature-4-bg-right-01.svg);
+    background-size: contain,contain;
+    background-repeat: no-repeat,no-repeat;
+    background-position: left center, right center;
+}

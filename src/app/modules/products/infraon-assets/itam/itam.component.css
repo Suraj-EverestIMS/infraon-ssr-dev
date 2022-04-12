@@ -1,0 +1,7 @@
+.header-section {
+    background-image: url(./../../../../../assets/img/header-bg/itam-bg-left.webp), url(./../../../../../assets/img/header-bg/itam-bg-right.svg),url(./../../../../../assets/img/header-bg/itam-bg-center.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0,100%,50%;
+    background-color: #fff;
+}

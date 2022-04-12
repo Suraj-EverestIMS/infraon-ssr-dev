@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { CanonicalService } from 'src/app/_services/canonical.service';
 import { StateService } from 'src/app/_services/state.service';
@@ -15,11 +16,15 @@ export class HomepageComponent implements OnInit {
     private _metaTagService: Meta,
     private _canonical: CanonicalService,
     private _stateService: StateService,
+    @Inject(PLATFORM_ID) private platformId: any,
     ) {
-      this.titleService.setTitle('infinity')
-      this._metaTagService.updateTag({ name: 'title', content: 'infinity' });
-      this._metaTagService.updateTag({ name: 'description', content: 'infinity' });
-      this._canonical.updateCanonicalUrl('infinity.com/');      
+      this.titleService.setTitle('Infraon Infinity')
+      this._metaTagService.updateTag({ name: 'title', content: 'Infraon Infinity' });
+      this._metaTagService.updateTag({ name: 'description', content: 'Infraon Infinity' });
+      this._canonical.updateCanonicalUrl('https://infraon.io/infraon-infinity');      
+      if (isPlatformBrowser(this.platformId)) {
+        localStorage.setItem('pageType', "product")
+      }
     }
 
   ngOnInit(): void {

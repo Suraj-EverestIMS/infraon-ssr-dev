@@ -7,8 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfraonNccmComponent implements OnInit {
 
-  constructor(
-    ) {}
+  prodName = "IMS";
+  prodURL = "/infraon-ims"
+  prodIcon = "./../../.../../../../../assets/img/homepage/product-icons/ims.svg"
+  dataObj!: object;
+
+  constructor() {
+    this.dataObj = {
+      "name" : this.prodName,
+      "url" : this.prodURL,
+      "img" : this.prodIcon
+    }
+  }
 
   ngOnInit(): void {
   }

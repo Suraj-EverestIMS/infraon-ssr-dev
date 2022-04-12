@@ -1,1 +1,22 @@
-<p>support works!</p>
+<app-loader></app-loader>
+
+
+<section class="header-section p-120 bg-grey">
+    <h1 class="header-title text-center mb-5">Need support? We are here to help</h1>
+    <p class="header-desc text-center">Stay alert about your networks & servers with a high device availability platform.</p>
+</section>
+
+<section class="p-120">
+    <div class="row bg-grey my-4 p-4" *ngFor='let item of data'>
+        <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 d-flex align-items-center">
+            <img src="{{item.imgUrl}}" alt="" class="d-inline-block me-3">
+            <div class="d-inline-block">
+                <p class="section-title-s text-start mb-0">{{item.name}}</p>
+                <p class="m-0">{{item.desc}}</p>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12 d-flex align-items-center">
+            <a href="{{item.email}}" [ngStyle]="{'cursor': (item.activeLink == true) ? 'pointer' : 'default'}" class="helpline-btn mb-0 primary-color">Get Support</a>
+        </div>
+    </div>
+</section>

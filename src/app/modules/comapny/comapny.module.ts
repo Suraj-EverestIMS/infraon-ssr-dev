@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ComapnyRoutingModule } from './comapny-routing.module';
 import { CompanyComponent } from './company.component';
+import { LoaderModule } from 'src/app/_directives/loader/loader.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { CompanyComponent } from './company.component';
   ],
   imports: [
     CommonModule,
-    ComapnyRoutingModule
+    ComapnyRoutingModule,
+    LoaderModule
   ]
 })
 export class ComapnyModule { }

@@ -1,13 +1,11 @@
-# Angular 13 Example Server Side Rendering
+# Infraon Webapp Angular 13, Server Side Rendering Enabled
 
-> An Angular starter kit featuring [Angular 13.2.3](https://angular.io), [Angular CLI 13.2.4](https://cli.angular.io/)
-
-> it's part of a repo series designed to create a Web Application with Angular
+> Project built on [Angular 13.2.3](https://angular.io), [Angular CLI 13.2.4](https://cli.angular.io/)
 
 # Web Application Live Demo
 <p align="center">
   <p align="center">
-    <a href="https://angular.ganatan.com/">
+    <a href="https://infraon.io/">
       <img src="https://media.giphy.com/media/9BuBBLc7keCgRojp92/giphy.gif" alt="Angular 13 Example 
       Application"/>
     </a>

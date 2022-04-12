@@ -1,1 +1,185 @@
-<p>contact-us works!</p>
+<app-loader></app-loader>
+
+
+<section class="header-section p-120 bg-grey">
+    <h1 class="header-title text-center mb-5">Contact Us</h1>
+    <p class="header-desc text-center">Stay alert about your networks & servers with a high device availability platform.</p>
+</section>
+
+<section class="p-120">
+    <h2 class="section-title text-center">We’d Love To Hear From You</h2>
+    <p class="section-paragraph text-center">Whether you have a question about features, trials, pricing, need a demo, or anything else, our team is ready to answer all your questions.Please use the contact details and/or form below to get in touch with us for sales, support of general enquiries.</p>
+</section>
+
+<section class="p-lr-120">
+    <div class="row mx-0">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+            <div>
+                <img src="./../../../assets/img/feature-icons/headphones-outline.svg" alt="">
+                <h2 class="section-title my-3" style="font-size: 36px!important;">Sales Enquiries</h2>
+                <p class="section-paragraph">Interested in any of our products? Talk to our experts today</p>
+                <p class="section-paragraph"><b>IND</b> +91 80465 67100</p>
+                <p class="section-paragraph"><b>US</b> +1 4567 8910</p>
+                <p class="section-paragraph"><b>Email</b> sales@infraon.io</p>
+            </div>
+            <div class="p-tb-60">
+                <img src="./../../../assets/img/feature-icons/call-outline.svg" alt="">
+                <h2 class="section-title my-3" style="font-size: 36px!important;">Support Enquiries</h2>
+                <p class="section-paragraph">Using any of our products and need help? Get in touch with customer support</p>
+                <a routerLink="/support"><p class="section-paragraph primary-color">Get support</p></a>
+            </div>
+            <div>
+                <img src="./../../../assets/img/feature-icons/users-outline.svg" alt="">
+                <h2 class="section-title my-3" style="font-size: 36px!important;">Partner Enquiries</h2>
+                <p class="section-paragraph">Looking for our partners?</p>
+                <p class="section-paragraph">Browse our partner directory</p>
+                <a routerLink="/support"><p class="section-paragraph primary-color">Find a partner</p></a>
+            </div>
+        </div>  
+
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+            <h2 class="section-title mb-0" style="font-size: 36px!important;">Drop us a message</h2>
+            <p class="section-paragraph">Any question and remark. Just write us a message</p>
+
+            <form [formGroup]="angForm" novalidate (ngSubmit)="onSubmit()">
+                    
+                <div class="row my-5">
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group text-left">
+                            <label class="input-label mb-3" for="first_name">First Name <span class="text-danger">*</span></label>
+                            <input class="form-control" type="text" [(ngModel)]="first_name" id="first_name" name="first_name" formControlName="first_name" placeholder="Enter your first name">
+                        </div>
+                        <p *ngIf="submitted && f['first_name'].errors" class="text-left text-danger">
+                            <span *ngIf="f['first_name'].errors['required']">First name is required.</span>
+                        </p>
+
+                        <!-- <div *ngIf="submitted && f['first_name'].errors" class="invalid-feedback">
+                            <div *ngIf="f['first_name'].errors['required']">first_name is required</div>
+                          </div> -->
+                    </div>
+                
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group text-left">
+                            <label class="input-label mb-3" for="last_name">Last Name</label>
+                            <input class="form-control" type="text" [(ngModel)]="last_name" id="last_name" formControlName="last_name" placeholder="Enter your last name">
+                        </div>
+                        <!-- <p *ngIf="angForm.controls['last_name'].invalid && (angForm.controls['last_name'].dirty || angForm.controls['last_name'].touched)" class="text-left text-danger">
+                            <span *ngIf="angForm.controls['last_name'].errors.required">Last name is required.</span>
+                        </p> -->
+                        <p *ngIf="submitted && f['last_name'].errors" class="text-left text-danger">
+                            <span *ngIf="f['last_name'].errors['required']">Last name is required.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row my-5">
+                    <div class="col-12">
+                        <div class="form-group text-left">
+                            <label class="input-label mb-3" for="phone">Phone number <span class="text-danger">*</span></label>
+                            <div class="d-flex">
+                               
+                                <ngx-intl-tel-input 
+                                    style="width: 100%;"
+                                    [cssClass]="'custom'" 
+                                    [preferredCountries]="preferredCountries"
+                                    [enableAutoCountrySelect]="false" 
+                                    [enablePlaceholder]="true" 
+                                    [searchCountryFlag]="true"
+                                    [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                                    [selectFirstCountry]="false"
+                                    [selectedCountryISO]="CountryISO.UnitedStates"
+                                    [tooltipField]="TooltipLabel.Name" 
+                                    [phoneValidation]="true" 
+                                    [separateDialCode]="separateDialCode"
+                                    id="phoneNumber"
+                                    name="phone" 
+                                    [(ngModel)]="phoneNumber"
+                                    formControlName="phone">
+                                </ngx-intl-tel-input>
+
+                            </div>
+                        </div>
+                        
+                        <!-- <p *ngIf="angForm.controls['phone'].invalid && (angForm.controls['phone'].dirty || angForm.controls['phone'].touched)" class="text-left text-danger">
+                            <span *ngIf="angForm.controls['phone'].errors.required">Contact number is required.</span>
+                        </p> -->
+                        <p *ngIf="submitted && f['phone'].errors" class="text-left text-danger">
+                            <span *ngIf="f['phone'].errors['required']">Contact number is required.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row my-5">
+                    <div class="col-12">
+                        <div class="form-group text-left">
+                            <label class="input-label mb-3" for="email">Email <span class="text-danger">*</span></label>
+                            <input class="form-control" [(ngModel)]="email" type="email" id="email" formControlName="email" placeholder="Enter your email">
+                        </div>
+                        <!-- <p *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class="text-left text-danger">
+                            <span *ngIf="angForm.controls['email'].errors.required">Email is required.</span>
+                        </p> -->
+                        <p *ngIf="submitted && f['email'].errors" class="text-left text-danger">
+                            <span *ngIf="f['email'].errors['required']">Email is required.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row my-5">
+                    <div class="col-12">
+                        <div class="form-group text-left">
+                            <label class="input-label mb-3" for="company">Company <span class="text-danger">*</span></label>
+                            <input class="form-control" [(ngModel)]="company" type="text" id="company" formControlName="company" placeholder="Enter your company name">
+                        </div>
+                        <!-- <p *ngIf="angForm.controls['company'].invalid && (angForm.controls['company'].dirty || angForm.controls['company'].touched)" class="text-left text-danger">
+                            <span *ngIf="angForm.controls['company'].errors.required">Company name is required.</span>
+                        </p> -->
+                        <p *ngIf="submitted && f['company'].errors" class="text-left text-danger">
+                            <span *ngIf="f['company'].errors['required']">Company name is required.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row my-5">
+                    <div class="col-12">
+                        <div class="form-group text-left">
+                            <label class="input-label mb-3" for="description">Enter your message</label>
+                            <textarea name="description" [(ngModel)]="description" id="description" placeholder="Enter your message" class="form-control" formControlName="description" cols="50"></textarea>
+                        </div>
+                        <!-- <p *ngIf="angForm.controls['description'].invalid && (angForm.controls['description'].dirty || angForm.controls['description'].touched)" class="text-left text-danger">
+                            <span *ngIf="angForm.controls['description'].errors.required">Your message is required.</span>
+                        </p> -->
+                        <p *ngIf="submitted && f['description'].errors" class="text-left text-danger">
+                            <span *ngIf="f['description'].errors['required']">Your message is required.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <button type="submit" class="primary-button" style="border: none;outline: none;" [disabled]="false">Submit</button>
+
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="p-120">
+    <h2 class="section-title text-center p-b-60">Office Locations</h2>
+
+    <div class="row mx-0 justify-content-center">
+        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
+            <img src="./../../../assets/img/usa-flag.png" style="max-width: 40px;" alt="">
+            <p class="section-title-s text-start my-3"><b>Infraon Corp.</b></p>
+            <p class="section-paragraph-s text-start">611 Gateway Blvd, Suite 120, <br> South San Francisco, California, 94080, United States</p>
+            <p style="font-weight: 400;font-size: 16px;color: grey;">CA, United States of America</p>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
+            <img src="./../../../assets/img/indian-flag.png" style="max-width: 40px;" alt="">
+            <p class="section-title-s text-start my-3" style="font-weight: normal;">Bengaluru, India</p>
+            <p class="section-paragraph-s text-start">3rd Floor, dollar Layout 15th cross, 4th phase, <br> J P Nagar Bengaluru-560078, Karnataka, India</p>
+            <p style="font-weight: 400;font-size: 16px;color: grey;">Bengaluru, India</p>
+        </div>
+    </div>
+</section>
+
+<div *ngIf="success" class="alert alert-success" role="alert" style="position: fixed;bottom: 30px;right: 50px;">
+    Thank you for enquiring with us. We will get in touch with you soon.
+</div>

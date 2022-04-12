@@ -7,7 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfraonOssComponent implements OnInit {
 
-  constructor() {}
+  prodName = "OSS";
+  prodURL = "/infraon-oss"
+  prodIcon = "./../../.../../../../../assets/img/homepage/product-icons/OSS.svg"
+  dataObj!: object;
+
+  constructor() {
+    this.dataObj = {
+      "name" : this.prodName,
+      "url" : this.prodURL,
+      "img" : this.prodIcon
+    }
+  }
 
   ngOnInit(): void {
   }

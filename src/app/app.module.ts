@@ -7,7 +7,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './modules/shared/navbar/navbar.component';
 import { FooterComponent } from './modules/shared/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+// import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,6 +25,12 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     BrowserAnimationsModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgxIntlTelInputModule
+    // NgbModule,
   ],
   providers: [
     // {

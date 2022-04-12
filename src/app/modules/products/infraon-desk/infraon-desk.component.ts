@@ -6,8 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./infraon-desk.component.css']
 })
 export class InfraonDeskComponent implements OnInit {
+  prodName = "Desk";
+  prodURL = "/infraon-desk"
+  prodIcon = "./../../.../../../../assets/img/homepage/product-icons/Desk.svg"
+  dataObj!: object;
 
-  constructor() {}
+  constructor() {
+    this.dataObj = {
+      "name" : this.prodName,
+      "url" : this.prodURL,
+      "img" : this.prodIcon
+    }
+  }
 
   ngOnInit(): void {
   }

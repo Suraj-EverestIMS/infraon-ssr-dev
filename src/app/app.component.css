@@ -24,7 +24,6 @@
   color: rgba(255, 255, 255, 0.75);
 }
 
-
 .nga-btn-navbar {
   color: #fff;
   background-color: #1976d2;
@@ -67,4 +66,17 @@
 
 .nga-footer .hint:hover {
   opacity: 0.8;
+}
+
+.scroll-top {
+  opacity: 0;
+  transition: all 0.5s;
+  padding: 2rem 2.25rem;
+  background: #8bc3ea;
+  position: fixed;
+  z-index: 999;
+  bottom: 40px;
+  right: 40px;
+  color: #fff;
+  border-radius: 50%;
 }

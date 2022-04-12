@@ -1,7 +1,11 @@
+/***************************************************************************************************
+ * Load `$localize` onto the global scope - used if i18n tags appear in Angular templates.
+ */
+import '@angular/localize/init';
 import 'zone.js/dist/zone-node';
 
 import { ngExpressEngine } from '@nguniversal/express-engine';
-import * as express from 'express';
+import express from 'express';
 import { join } from 'path';
 
 import { AppServerModule } from './src/main.server';

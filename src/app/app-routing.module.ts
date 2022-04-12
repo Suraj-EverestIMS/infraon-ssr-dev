@@ -26,7 +26,7 @@ const routes: Routes = [
   // single pages
   { path: 'company', loadChildren: () => import('./modules/comapny/comapny.module').then ( e => e.ComapnyModule) },
   { path: 'contact-us', loadChildren: () => import('./modules/contact-us/contact-us.module').then ( e => e.ContactUsModule)  },
-  { path: 'resources', loadChildren: () => import('./modules/resources/resources.module').then ( e => e.ResourcesModule)  },
+  { path: 'resources/:type', loadChildren: () => import('./modules/resources/resources.module').then ( e => e.ResourcesModule)  },
   { path: 'support', loadChildren: () => import('./modules/support/support.module').then ( e => e.SupportModule)  },
   { path: 'not-found', component: NotFoundComponent }
 ];

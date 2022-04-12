@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomepageComponent } from './homepage.component';
 import { HomepageRoutingModule } from './homepage-routing.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { LoaderModule } from 'src/app/_directives/loader/loader.module';
 
 
 
@@ -14,6 +15,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     CommonModule,
     HomepageRoutingModule,
     CarouselModule,
+    LoaderModule
   ]
 })
 export class HomepageModule { }

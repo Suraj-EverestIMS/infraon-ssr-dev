@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { SupportRoutingModule } from './support-routing.module';
 import { SupportComponent } from './support.component';
+import { LoaderModule } from 'src/app/_directives/loader/loader.module';
+import { ProductNavbarModule } from 'src/app/_directives/product-navbar/product-navbar.module';
 
 
 @NgModule({
@@ -11,7 +13,9 @@ import { SupportComponent } from './support.component';
   ],
   imports: [
     CommonModule,
-    SupportRoutingModule
+    SupportRoutingModule,
+    LoaderModule,
+    ProductNavbarModule
   ]
 })
 export class SupportModule { }
