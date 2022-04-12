@@ -1,7 +1,0 @@
-.header-section {
-    background-image: url(./../../../../../assets/img/header-bg/itim-report-header-right-01.svg), url(./../../../../../assets/img/header-bg/itim-report-header-left-01.svg);
-    background-size: contain,contain;
-    background-repeat: no-repeat,no-repeat;
-    background-position: right center, left center;
-    background-color: #fff;
-}
