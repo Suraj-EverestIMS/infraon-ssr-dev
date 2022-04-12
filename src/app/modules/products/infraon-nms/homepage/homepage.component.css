@@ -1,0 +1,50 @@
+.header-section {
+    background-image: url(./../../../../../assets/img/header-bg/nms-header-bg.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-blend-mode: lighten;
+    box-shadow: inset 0 -1px 0 #e4e4e4;
+}
+
+.nms-header-img-container {
+    height: 15rem;
+}
+.nms-top-feature {
+    padding-top: 30rem!important;
+}
+
+.nms-feature-img-1, .nms-feature-img-2, .nms-feature-img-3{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    Width: 100%;
+    position: relative;
+    Height: 538px;
+}
+.nms-feature-img-1 img, .nms-feature-img-2 img, .nms-feature-img-3 img{
+    position: absolute;
+    width: 30%;
+    position: absolute;
+    bottom: 2rem;
+}
+.nms-feature-img-1{
+    background-image: url(./../../../../../assets/img/feature-img/nms-keay-feature-1.webp);
+    background-position: left;
+}
+.nms-feature-img-2{
+    background-image: url(./../../../../../assets/img/feature-img/nms-keay-feature-2.webp);
+    background-position: right;
+}
+.nms-feature-img-3{
+    background-image: url(./../../../../../assets/img/feature-img/nms-keay-feature-3.webp);
+    background-position: left;
+    
+}
+
+.nms-feature-img-1 img, .nms-feature-img-3 img{
+    right: 5rem;
+}
+.nms-feature-img-2 img{
+    left: 5rem;
+}

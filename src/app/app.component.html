@@ -1,0 +1,141 @@
+<app-navbar></app-navbar>
+<main>
+  <span (click)="scrollToTop()" class="scroll-top"><i class="fa-solid fa-chevron-up"></i></span>
+  <button type="button" class="primary-button"style="position: fixed;bottom: 15rem;right: 0.25rem;cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Contact Us
+  </button>
+  <router-outlet></router-outlet>
+</main>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="w-100">
+          <img src="./../assets/img/infinity-logos/web-logo/infraon_logo_small.svg" style="width: 30%;" class="d-block mx-auto" alt="">
+          <p class="text-center" style="font-size: 20px;margin-left: 2rem;"><b>Drop us a message</b></p>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="angForm" novalidate (ngSubmit)="onSubmit()">
+                    
+          <div class="row mb-3">
+              <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                  <div class="form-group text-left">
+                      <label class="input-label mb-3" for="first_name">First Name <span class="text-danger">*</span></label>
+                      <input class="form-control" type="text" [(ngModel)]="first_name" id="first_name" name="first_name" formControlName="first_name" placeholder="Enter your first name">
+                  </div>
+                  <p *ngIf="submitted && f['first_name'].errors" class="text-left text-danger">
+                      <span *ngIf="f['first_name'].errors['required']">First name is required.</span>
+                  </p>
+
+                  <!-- <div *ngIf="submitted && f['first_name'].errors" class="invalid-feedback">
+                      <div *ngIf="f['first_name'].errors['required']">first_name is required</div>
+                    </div> -->
+              </div>
+          
+              <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                  <div class="form-group text-left">
+                      <label class="input-label mb-3" for="last_name">Last Name</label>
+                      <input class="form-control" type="text" [(ngModel)]="last_name" id="last_name" formControlName="last_name" placeholder="Enter your last name">
+                  </div>
+                  <!-- <p *ngIf="angForm.controls['last_name'].invalid && (angForm.controls['last_name'].dirty || angForm.controls['last_name'].touched)" class="text-left text-danger">
+                      <span *ngIf="angForm.controls['last_name'].errors.required">Last name is required.</span>
+                  </p> -->
+                  <p *ngIf="submitted && f['last_name'].errors" class="text-left text-danger">
+                      <span *ngIf="f['last_name'].errors['required']">Last name is required.</span>
+                  </p>
+              </div>
+          </div>
+
+          <div class="row mb-3">
+              <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                  <div class="form-group text-left">
+                      <label class="input-label mb-3" for="phone">Phone number <span class="text-danger">*</span></label>
+                      <div class="d-flex">
+                         
+                          <ngx-intl-tel-input 
+                              style="width: 100%;"
+                              [cssClass]="'custom'" 
+                              [preferredCountries]="preferredCountries"
+                              [enableAutoCountrySelect]="false" 
+                              [enablePlaceholder]="true" 
+                              [searchCountryFlag]="true"
+                              [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                              [selectFirstCountry]="false"
+                              [selectedCountryISO]="CountryISO.UnitedStates"
+                              [tooltipField]="TooltipLabel.Name" 
+                              [phoneValidation]="true" 
+                              [separateDialCode]="separateDialCode"
+                              id="phoneNumber"
+                              name="phone" 
+                              [(ngModel)]="phoneNumber"
+                              formControlName="phone">
+                          </ngx-intl-tel-input>
+
+                      </div>
+                  </div>
+                  
+                  <!-- <p *ngIf="angForm.controls['phone'].invalid && (angForm.controls['phone'].dirty || angForm.controls['phone'].touched)" class="text-left text-danger">
+                      <span *ngIf="angForm.controls['phone'].errors.required">Contact number is required.</span>
+                  </p> -->
+                  <p *ngIf="submitted && f['phone'].errors" class="text-left text-danger">
+                      <span *ngIf="f['phone'].errors['required']">Contact number is required.</span>
+                  </p>
+              </div>
+
+              <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group text-left">
+                    <label class="input-label mb-3" for="email">Email <span class="text-danger">*</span></label>
+                    <input class="form-control" [(ngModel)]="email" type="email" id="email" formControlName="email" placeholder="Enter your email">
+                </div>
+                <!-- <p *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class="text-left text-danger">
+                    <span *ngIf="angForm.controls['email'].errors.required">Email is required.</span>
+                </p> -->
+                <p *ngIf="submitted && f['email'].errors" class="text-left text-danger">
+                    <span *ngIf="f['email'].errors['required']">Email is required.</span>
+                </p>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+              <div class="col-12">
+                  <div class="form-group text-left">
+                      <label class="input-label mb-3" for="company">Company <span class="text-danger">*</span></label>
+                      <input class="form-control" [(ngModel)]="company" type="text" id="company" formControlName="company" placeholder="Enter your company name">
+                  </div>
+                  <!-- <p *ngIf="angForm.controls['company'].invalid && (angForm.controls['company'].dirty || angForm.controls['company'].touched)" class="text-left text-danger">
+                      <span *ngIf="angForm.controls['company'].errors.required">Company name is required.</span>
+                  </p> -->
+                  <p *ngIf="submitted && f['company'].errors" class="text-left text-danger">
+                      <span *ngIf="f['company'].errors['required']">Company name is required.</span>
+                  </p>
+              </div>
+          </div>
+
+          <div class="row mb-3">
+              <div class="col-12">
+                  <div class="form-group text-left">
+                      <label class="input-label mb-3" for="description">Enter your message</label>
+                      <textarea name="description" [(ngModel)]="description" id="description" placeholder="Enter your message" class="form-control" formControlName="description" cols="50"></textarea>
+                  </div>
+                  <!-- <p *ngIf="angForm.controls['description'].invalid && (angForm.controls['description'].dirty || angForm.controls['description'].touched)" class="text-left text-danger">
+                      <span *ngIf="angForm.controls['description'].errors.required">Your message is required.</span>
+                  </p> -->
+                  <p *ngIf="submitted && f['description'].errors" class="text-left text-danger">
+                      <span *ngIf="f['description'].errors['required']">Your message is required.</span>
+                  </p>
+              </div>
+          </div>
+
+          <button type="submit" class="primary-button" style="border: none;outline: none;" [disabled]="false">Submit</button>
+
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer [footer_title]='dataPassed'></app-footer>
